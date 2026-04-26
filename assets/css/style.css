@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
+.nav-menu a.active {
+    border-bottom: 2px solid #a8d5ba;
+}
+
+/* ================= HERO ================= */
+.hero {
+    height: 100vh;
+    background: url("../img/hero.jpg") center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 80px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.hero-text {
+    position: relative;
+    color: white;
+    padding-left: 80px;
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 64px;
+    letter-spacing: 2px;
+}
+
+.hero-text p {
+    margin-top: 15px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* ================= SECTION ================= */
+.section {
+    padding: 90px 60px;
+    background: #eef4ec;
+}
+
+.section.green {
+    background: #dfeadf;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+/* ================= CARD (DIBUAT LEBIH TINGGI) ================= */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    /* KUNCI CARD TINGGI */
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.18);
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* gambar lebih tinggi */
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 18px 0 8px;
+    font-size: 18px;
+}
+
+.card p {
+    padding: 0 18px 22px;
+    font-size: 14px;
+    color: #555;
+    flex-grow: 1; /* bikin isi rata */
+}
+
+.link-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #7a9b8c;
+    color: white;
+    text-align: relative;
+    padding: 35px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hero-text {
+        padding-left: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section {
+        padding: 60px 25px;
+    }
+
+    .card img {
+        height: 180px;
+    }
+}
